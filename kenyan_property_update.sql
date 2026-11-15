@@ -1,0 +1,31 @@
+UPDATE property
+SET
+    title = 'Kenyan Modern Home',
+    pcontent = '<div class="container mt-5"><h2>Kenyan Modern Home</h2><p>This beautiful modern home is located in Nairobi, Kenya. It features spacious rooms, modern amenities, and a secure environment perfect for families.</p><ul><li>Property Age: 5 Years</li><li>Swimming Pool: Yes</li><li>Parking: Yes</li><li>Gym: Yes</li><li>Security: 24/7</li></ul></div>',
+    type = 'house',
+    bhk = '4 BHK',
+    stype = 'sale',
+    bedroom = 4,
+    bathroom = 3,
+    balcony = 1,
+    kitchen = 1,
+    hall = 1,
+    floor = '2nd Floor',
+    size = 2000,
+    price = 15000000,
+    location = 'Karen Road',
+    city = 'Nairobi',
+    state = 'Nairobi',
+    feature = '<p>Features include a modern kitchen, spacious living room, landscaped garden, and solar panels.</p>',
+    pimage = 'kenyanhome1.jpg',
+    pimage1 = 'kenyanhome2.jpg',
+    pimage2 = 'kenyanhome3.jpg',
+    pimage3 = 'kenyanhome4.jpg',
+    pimage4 = 'kenyanhome5.jpg',
+    mapimage = 'floorplan_sample.jpg',
+    topmapimage = 'kenyanhome6.jpg',
+    groundmapimage = 'kenyanhome7.jpg',
+    totalfloor = '2 Floors',
+    status = 'available'
+WHERE
+    pid = 25;

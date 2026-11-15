@@ -1,0 +1,45 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Handle trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Prevent access to sensitive files
+RewriteRule ^(config\.php|\.htaccess)$ - [F,L]
+
+# Handle PHP files without .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# Handle property detail pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^property/([0-9]+)$ propertydetail.php?pid=$1 [L,QSA]
+
+# Handle agent profile pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^agent/([0-9]+)$ agent-profile.php?uid=$1 [L,QSA]
+
+# Handle state property pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^properties/([^/]+)$ stateproperty.php?id=$1 [L,QSA]
+
+# Handle property grid with filters
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^properties$ propertygrid.php [L,QSA]
+
+# Handle search results
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^search$ propertygrid.php [L,QSA]
+
+# Prevent directory listing
+Options -Indexes
+
+# Handle 404 errors
+ErrorDocument 404 /404.php
